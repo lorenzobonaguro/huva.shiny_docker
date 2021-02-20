@@ -14,10 +14,10 @@ RUN Rscript -e 'BiocManager::install(update = T, ask = F, version= "3.11")' && \
     Rscript -e 'BiocManager::install(c("shinydashboard", "shinyBS", "useful", "shinybusy", "shinyjs", "V8"), version = "3.11")'
 
 # Install huva
-COPY huva_0.1.4.tar.gz /tmp/
-COPY huva.db_0.1.4.tar.gz /tmp/
-RUN Rscript -e 'install.packages("/tmp/huva.db_0.1.4.tar.gz", repos = NULL, type = "source")' && \
-	Rscript -e 'install.packages("/tmp/huva_0.1.4.tar.gz", repos = NULL, type = "source")'
+COPY huva_0.1.5.tar.gz /tmp/
+COPY huva.db_0.1.5.tar.gz /tmp/
+RUN Rscript -e 'install.packages("/tmp/huva.db_0.1.5.tar.gz", repos = NULL, type = "source")' && \
+	Rscript -e 'install.packages("/tmp/huva_0.1.5.tar.gz", repos = NULL, type = "source")'
 
 # Copy app
 COPY /app ./app
